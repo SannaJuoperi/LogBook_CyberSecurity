@@ -9,6 +9,6 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 8.11.2024  2 hours  Module 4: Protecting the Organization done.
 
-9.11.2024  2 hours  Module 5: Will Your Fure Be in Cybersecurity? and Course Final Exam done. 
+9.11.2024  3 hours  Module 5: Will Your Future Be in Cybersecurity? and Course Final Exam done. I created account and logged in PortSwigger. I explore the webpage and read about topics. 
 
-I have worked 11 hours.
+I have worked 12 hours.
