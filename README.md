@@ -7,5 +7,8 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 7.11.2024  2 hours  Module 3: Protecting the Organizarion done.
 
+8.11.2024  2 hours  Module 4: Protecting the Organization done.
 
-I have worked 7 hours.
+9.11.2024  2 hours  Module 5: Will Your Fure Be in Cybersecurity? and Course Final Exam done. 
+
+I have worked 11 hours.
