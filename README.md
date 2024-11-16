@@ -15,4 +15,6 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 14.11.2024  2 hours SQL injection - PortSwigger 2/3 of the labs done.
 
-I have worked 19 hours.
+16.11.2024  2 hours  SQL injection - PortSwigger. My progress stopped Blind SQL injection with conditional responses lab. I finished this section 31/51.
+
+I have worked 21 hours.
