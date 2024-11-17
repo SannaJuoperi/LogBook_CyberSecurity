@@ -17,6 +17,6 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 16.11.2024  5 hours  Couple of SQL injection labs and Authentication 1/3 of the labs done. 
 
-17.11.2024  8 hours All the Access Control labs done. I tried the challenging labs last time, but the intruder attacks took so long that I gave up and I returned assignment to ItsLearning. 
+17.11.2024  8 hours All the Access Control labs done. I tried the challenging labs one last time, but the intruder attacks took so long that I gave up and I returned PortSwigger assignment to ItsLearning. 
 
 I have worked 32 hours.
