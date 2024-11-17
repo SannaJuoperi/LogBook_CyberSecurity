@@ -17,6 +17,6 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 16.11.2024  5 hours  Couple of SQL injection labs and Authentication 1/3 of the labs done. 
 
-17.11.2024  3 hours Access Control 1/3 of the labs done.
+17.11.2024  3 hours Access Control 2/3 of the labs done.
 
 I have worked 27 hours.
