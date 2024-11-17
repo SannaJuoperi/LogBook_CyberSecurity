@@ -11,10 +11,12 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 9.11.2024  3 hours  Module 5: Will Your Future Be in Cybersecurity? and Course Final Exam done. I created account and logged in PortSwigger. I explore the webpage and read about topics. 
 
-13.11.2024 5 hours  SQL injection - PortSwigger 1/3 of the labs done.
+13.11.2024 5 hours  SQL injection 1/3 of the labs done.
 
-14.11.2024  2 hours SQL injection - PortSwigger 2/3 of the labs done.
+14.11.2024  2 hours SQL injection 2/3 of the labs done.
 
-16.11.2024  5 hours  Some SQL injection - PortSwigger labs and Authentication labs done. 
+16.11.2024  5 hours  Couple of SQL injection labs and Authentication 1/3 of the labs done. 
 
-I have worked 21 hours.
+17.11.2024  2 hours Access Control 1/3 of the labs done.
+
+I have worked 26 hours.
