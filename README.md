@@ -19,4 +19,4 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 17.11.2024  3 hours Access Control 1/3 of the labs done.
 
-I have worked 26 hours.
+I have worked 27 hours.
