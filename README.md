@@ -19,6 +19,6 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 17.11.2024  8 hours All Access Control labs done. I tried the challenging labs one last time, but the intruder attacks took so long that I gave up and I returned PortSwigger assignment to ItsLearning. 
 
-19.11.2024  2 hours  Downloaded Docker and I listened video(16 min) about it. I also listened 11.11 lecture Starting the project. 
+19.11.2024  2 hours  Downloaded Docker and I listened video(16 min) about it. I also listened 11.11 lecture Starting the project. I followed the teacher guide and created booking_system_structure.sql. 
 
 I have worked 34 hours.
