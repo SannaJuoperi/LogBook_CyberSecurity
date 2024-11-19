@@ -19,4 +19,6 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 17.11.2024  8 hours All the Access Control labs done. I tried the challenging labs one last time, but the intruder attacks took so long that I gave up and I returned PortSwigger assignment to ItsLearning. 
 
-I have worked 32 hours.
+19.11.2024  1 hour  Downloaded Docker and listened the lecture about it.
+
+I have worked 33 hours.
