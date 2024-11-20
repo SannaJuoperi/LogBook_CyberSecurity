@@ -21,4 +21,6 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 19.11.2024  2 hours  Downloaded Docker and I listened video(16 min) about it. I also listened 11.11 lecture Starting the project. I followed the teacher guide and created booking_system_structure.sql. 
 
-I have worked 34 hours.
+20.11.2024  2 hours  I rewatched 11.11 lecture and installed ZAP. I also created the necessary files in VS Code.
+
+I have worked 36 hours.
