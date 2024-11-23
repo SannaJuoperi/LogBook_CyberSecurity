@@ -23,6 +23,6 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 20.11.2024  2 hours  I rewatched 11.11 lecture and installed ZAP. I also created the necessary files in VS Code and added to this GitHub repo. I did my first security test with ZAP. The user registry worked in SQL but not in the browser. 
 
-23.11.2024  3 hours I read the material again and copied all the codes into VSCODE. I tested adding the user using SQL and http://localhost. Both ways worked.  
+23.11.2024  8 hours I read the material again and copied all the codes into VSCODE. I tested several times adding the user using SQL and http://localhost. Both ways worked. Also tested curl -x POST method on GitBash. Tested several times ZAP and Google Developer Tools that everything works, because the text Administrator and my own changes to the username to e-mail give a lot of errors. After all the changes, everything worked. First-register-test-23-11-24 and First-test-set were performed before adding CSS. After adding I performed second-register-test-23-11-24 and second-test-set. 
 
-I have worked 39 hours.
+I have worked 43 hours.

@@ -1,13 +1,15 @@
-
---Enable the uuid-ossp extension
+-- Enable the uuid-ossp extension
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+--enable crypto functions
+CREATE EXTENSION pgcrypto;
 
 -- Users table: Minimized personal information, pseudonymization via user_token
 CREATE TABLE xyz789_users (
     user_id SERIAL PRIMARY KEY,
     username VARCHAR(50) UNIQUE NOT NULL,
     password_hash TEXT NOT NULL,
-    role VARCHAR(10) CHECK (role IN ('reserver', 'administrator')) NOT NULL,
+    role VARCHAR(15) CHECK (role IN ('reserver', 'administrator')) NOT NULL,
     birthdate DATE NOT NULL,
     user_token UUID UNIQUE DEFAULT uuid_generate_v4()  -- Pseudonymized identifier
 );
@@ -48,10 +50,6 @@ BEGIN
     RETURN NEW;
 END;
 $$ LANGUAGE plpgsql;
-
---so the Administrator can enter
-ALTER TABLE xyz789_users 
-    ALTER COLUMN role TYPE VARCHAR(15);
 
 -- Trigger to enforce age check before inserting a reservation
 CREATE TRIGGER xyz789_check_age_trigger
