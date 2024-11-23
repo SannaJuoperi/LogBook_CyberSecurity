@@ -1,41 +1,86 @@
--- Users Table
-CREATE TABLE xyz123_xyz789_users (
-    id SERIAL PRIMARY KEY,
-    pseudonym VARCHAR(100) NOT NULL,
-    email_hash CHAR(64) UNIQUE NOT NULL,
-    password_hash VARCHAR(255) NOT NULL,
-    role VARCHAR(20) CHECK (role IN ('reserver', 'admin')) NOT NULL,
-    age INT NOT NULL CHECK (age >= 15),
-    consent BOOLEAN DEFAULT TRUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    data_expiry TIMESTAMP DEFAULT CURRENT_TIMESTAMP + INTERVAL '2 years'
+
+--Enable the uuid-ossp extension
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+-- Users table: Minimized personal information, pseudonymization via user_token
+CREATE TABLE xyz789_users (
+    user_id SERIAL PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    password_hash TEXT NOT NULL,
+    role VARCHAR(10) CHECK (role IN ('reserver', 'administrator')) NOT NULL,
+    birthdate DATE NOT NULL,
+    user_token UUID UNIQUE DEFAULT uuid_generate_v4()  -- Pseudonymized identifier
 );
 
--- Resources Table
-CREATE TABLE xyz123_xyz789_resources (
-    id SERIAL PRIMARY KEY,
-    name VARCHAR(100) NOT NULL,
-    description TEXT,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- Resources table: Stores information about the resources that can be reserved
+CREATE TABLE xyz789_resources (
+    resource_id SERIAL PRIMARY KEY,
+    resource_name VARCHAR(100) NOT NULL,
+    resource_description TEXT
 );
 
--- Reservations Table
-CREATE TABLE xyz123_xyz789_reservations (
-    id SERIAL PRIMARY KEY,
-    user_pseudonym VARCHAR(100) NOT NULL,
-    resource_id INT REFERENCES xyz123_xyz789_resources(id) ON DELETE CASCADE,
-    start_time TIMESTAMP NOT NULL,
-    end_time TIMESTAMP NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    CHECK (end_time > start_time)
+-- Reservations table: Pseudonymized reservation entries, no direct user identity stored
+CREATE TABLE xyz789_reservations (
+    reservation_id SERIAL PRIMARY KEY,
+    reserver_token UUID REFERENCES xyz789_users(user_token) ON DELETE CASCADE, -- Pseudonym reference
+    resource_id INT REFERENCES xyz789_resources(resource_id),
+    reservation_start TIMESTAMP NOT NULL,
+    reservation_end TIMESTAMP NOT NULL,
+    CHECK (reservation_end > reservation_start)
 );
 
--- Audit Log Table
-CREATE TABLE xyz123_xyz789_audit_logs (
-    id SERIAL PRIMARY KEY,
-    action VARCHAR(50) NOT NULL,
-    table_name VARCHAR(100) NOT NULL,
-    performed_by VARCHAR(100) NOT NULL,
-    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- Logs table: Tracks administrator actions, e.g., add/delete resources, without exposing sensitive data
+CREATE TABLE xyz789_admin_logs (
+    log_id SERIAL PRIMARY KEY,
+    admin_id INT REFERENCES xyz789_users(user_id),
+    action VARCHAR(255) NOT NULL,
+    resource_id INT,
+    reservation_id INT,
+    timestamp TIMESTAMP DEFAULT NOW()
 );
+
+-- Function to check if the user is over 15 years old before making a reservation
+CREATE OR REPLACE FUNCTION xyz789_check_age() RETURNS TRIGGER AS $$
+BEGIN
+    IF (EXTRACT(YEAR FROM AGE(NEW.reservation_start, (SELECT birthdate FROM xyz789_users WHERE user_token = NEW.reserver_token))) < 15) THEN
+        RAISE EXCEPTION 'User must be over 15 years old to make a reservation';
+    END IF;
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+--so the Administrator can enter
+ALTER TABLE xyz789_users 
+    ALTER COLUMN role TYPE VARCHAR(15);
+
+-- Trigger to enforce age check before inserting a reservation
+CREATE TRIGGER xyz789_check_age_trigger
+BEFORE INSERT ON xyz789_reservations
+FOR EACH ROW
+EXECUTE FUNCTION xyz789_check_age();
+
+-- View for anonymous access: Shows booked resources without reserver’s identity (pseudonymized view)
+CREATE VIEW xyz789_booked_resources_view AS
+SELECT
+    r.resource_name,
+    res.reservation_start,
+    res.reservation_end
+FROM xyz789_resources r
+JOIN xyz789_reservations res ON r.resource_id = res.resource_id;
+
+-- Deletion function for the right to erasure (compliant with GDPR)
+CREATE OR REPLACE FUNCTION xyz789_erase_user(user_id_to_erase INT) RETURNS VOID AS $$
+DECLARE
+    user_token_to_erase UUID;
+BEGIN
+    -- Find the pseudonym (token) of the user to erase
+    SELECT user_token INTO user_token_to_erase FROM xyz789_users WHERE user_id = user_id_to_erase;
+
+    -- Delete user and associated data
+    DELETE FROM xyz789_reservations WHERE reserver_token = user_token_to_erase;
+    DELETE FROM xyz789_users WHERE user_id = user_id_to_erase;
+
+    -- Optionally, delete admin logs associated with the user
+    DELETE FROM xyz789_admin_logs WHERE admin_id = user_id_to_erase;
+END;
+$$ LANGUAGE plpgsql;
