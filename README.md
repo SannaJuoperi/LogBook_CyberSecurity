@@ -11,7 +11,7 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 09.11.2024  3 hours  Module 5: Will Your Future Be in Cybersecurity? and Course Final Exam done. I created account and logged in PortSwigger.
 
-13.11.2024 5 hours  SQL injection 1/3 of the labs done.
+13.11.2024  5 hours  SQL injection 1/3 of the labs done.
 
 14.11.2024  2 hours SQL injection 2/3 of the labs done.
 
@@ -21,6 +21,8 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 19.11.2024  2 hours  Downloaded Docker and I listened video(16 min) about it. I also listened 11.11 lecture Starting the project. I followed the teacher's guide and created booking_system_structure.sql. 
 
-20.11.2024  2 hours  I rewatched 11.11 lecture and installed ZAP. I also created the necessary files in VS Code and added to this GitHub repo. I did my first security test with ZAP. 
+20.11.2024  2 hours  I rewatched 11.11 lecture and installed ZAP. I also created the necessary files in VS Code and added to this GitHub repo. I did my first security test with ZAP. The user registry worked in SQL but not in the browser. 
 
-I have worked 36 hours.
+23.11.2024  3 hours I read the material again and copied all the codes into VSCODE. I tested adding the user using SQL and http://localhost. Both ways worked.  
+
+I have worked 39 hours.
