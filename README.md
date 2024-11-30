@@ -25,4 +25,6 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 23.11.2024  8 hours I read the material again and copied all the codes into VSCODE. I tested several times adding the user using SQL and http://localhost. Both ways worked. Also tested curl -x POST method on GitBash. Tested several times ZAP and Google Developer Tools that everything works, because the text Administrator and my own changes to the username to e-mail give a lot of errors. After all the changes, everything worked. First-register-test-23-11-24 and First-test-set were performed before adding CSS. After adding I performed second-register-test-23-11-24 and second-test-set. 
 
-I have worked 43 hours.
+30.11.2024  2 hours I watched 18.11 lecture and made same the changes as in lecture. Everything worked. I did two attack in ZAP and I genereted index-login-registreration-301124-Test-1.md report. 
+
+I have worked 46 hours.
