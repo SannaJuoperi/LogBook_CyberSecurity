@@ -19,12 +19,14 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 17.11.2024  8 hours All Access Control labs done. I tried the challenging labs one last time, but the intruder attacks took so long that I gave up and I returned PortSwigger assignment to ItsLearning. 
 
-19.11.2024  2 hours  Downloaded Docker and I listened video (16 minutes) about it. I also listened 11.11 lecture Starting the project. I followed the teacher's guide and created booking_system_structure.sql. 
+19.11.2024  2 hours  Downloaded Docker and I watched to a video (16 minutes) about it. I also watched 11.11 lecture Starting the project. I followed the teacher's guide and created booking_system_structure.sql. 
 
 20.11.2024  2 hours  I rewatched 11.11 lecture and installed ZAP. I also created the necessary files in VS Code and added to this GitHub repo. I did my first security test with ZAP. The user registry worked in SQL but not in the browser. 
 
 23.11.2024  8 hours I read the material again and copied all the codes into VSCODE. I tested several times adding the user using SQL and http://localhost. Both ways worked. Also tested curl -x POST method on GitBash. Tested several times ZAP and Google Developer Tools that everything works, because the text Administrator and my own changes to the username to e-mail give a lot of errors. After all the changes, everything worked. First-register-test-23-11-24 and First-test-set were performed before adding CSS. After adding I performed second-register-test-23-11-24 and second-test-set. 
 
-30.11.2024  3 hours I watched 18.11 lecture and made same the changes as in lecture. Everything worked. I did two attack in ZAP and I genereted index-login-registreration-301124-Test-1.md report. I listened to a video about Alerts (15 minutes), made the same changes as shown in the video related to middleware functions for setting security headers globally, and conducted several attacks in ZAP. I genereted Fixed-Alerts-1.12.2024.md report. 
+24.11.2024  2 hours I was in a Teams meeting with a schoolmate who had asked for help several times on Itslearning and was having trouble with a Phase 1 task. I helped him to copy the codes from the teacher's GitHub and complete the task according to the instructions. I also helped him to use GitHub because he was not very familiar with coding and GitHub.
 
-I have worked 47 hours.
+30.11.2024  4 hours I watched 18.11 lecture and made same the changes as in lecture. Everything worked. I did two attack in ZAP and I genereted index-login-registreration-301124-Test-1.md report. I watched to a video about Alerts (15 minutes), made the same changes as shown in the video related to middleware functions for setting security headers globally, and conducted several attacks in ZAP. After changes and attacks I genereted Fixed-Alerts-1.12.2024.md report. I watched to a video about Adding a logging (16 minutes). I created login_log TABLE. 
+
+I have worked 49 hours.
