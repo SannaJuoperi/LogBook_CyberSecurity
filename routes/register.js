@@ -16,17 +16,16 @@ const registerSchema = z.object({
 
 // Helper function to check if a username (email) already exists
 async function isUniqueUsername(email) {
-  const result = await client.queryArray(
-    `SELECT username FROM xyz789_users WHERE username = $1`, 
-    [email]
-  );
+  const result = await client.queryArray(`SELECT username FROM xyz789_users WHERE username = $1`, [email]);
   return result.rows.length === 0;
 }
 
 // Handle user registration
 export async function registerUser(c) {
-  const body = await c.req.parseBody();
-  const { username, password, birthdate, role } = body;
+  const username = c.get('username');
+  const password = c.get('password');
+  const birthdate = c.get('birthdate');
+  const role = c.get('role');
 
   try {
     // Validate the input data using Zod
@@ -34,7 +33,7 @@ export async function registerUser(c) {
 
     // Check if the email is unique
     if (!(await isUniqueUsername(username))) {
-      return c.text('Email already in use', 400);
+      return new Response('Email already in use', {status: 400});
     }
 
     // Hash the user's password
@@ -42,20 +41,17 @@ export async function registerUser(c) {
     const hashedPassword = await bcrypt.hash(password, salt);
 
     // Insert the new user into the database
-    await client.queryArray(
-      `INSERT INTO xyz789_users (username, password_hash, role, birthdate) VALUES ($1, $2, $3, $4)`,
-      [username, hashedPassword, role, birthdate]
-    );
+    await client.queryArray(`INSERT INTO xyz789_users (username, password_hash, role, birthdate) VALUES ($1, $2, $3, $4)`, [username, hashedPassword, role, birthdate]);
 
-    // Success response
-    return  c.redirect('/');
-    
+    // Success response, redirect to the index page
+    return new Response(null, { status: 302, headers: { Location: "/", }, });
+
   } catch (error) {
     if (error instanceof z.ZodError) {
       // Handle validation errors from Zod
-      return c.text(`Validation Error: ${error.errors.map(e => e.message).join(", ")}`, 400);
+      return new Response(`Validation Error: ${error.errors.map(e => e.message).join(", ")}`, {status: 400});
     }
     console.error(error);
-    return c.text('Error during registration', 500);
+    return new Response('Error during registration', { status: 500 });
   }
 }
