@@ -33,4 +33,6 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 2.12.2024 2 hours I continued to work on the code. I notice that const = [, storedUsername, storedPasswordHash, userUUID] = user; needs a comma in the first spot. After making that small change, everything worked well. I took the ZAP test afterward and I named that test "Added-A-Logging-2-12-2024.md". After that, I took the second test with .HAR and named that test "Second-test-after-adding-a-logging-2-12-2024.md". I noticed that there are difference between tests: The second test has line User Agent Fuzzer | Informational | 24 |. 
 
-I have worked 54 hours.
+3.12.2024 1 hour I helped the same schoolmate with Phase 2 in a Teams meeting to get his system up and running. 
+
+I have worked 55 hours.
