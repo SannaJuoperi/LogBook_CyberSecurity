@@ -29,10 +29,12 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 30.11.2024  4 hours I watched 18.11 lecture and made same the changes as in lecture. Everything worked. I did two attack in ZAP and I genereted "index-login-registreration-301124-Test-1.md report". I watched to a video about Alerts (15 minutes), made the same changes as shown in the video related to middleware functions for setting security headers globally, and conducted several attacks in ZAP. After changes and attacks I genereted "Fixed-Alerts-1.12.2024.md" report. I watched to a video about Adding a logging (16 minutes). I created login_log TABLE and made same changes as teacher in the video but I got error "Invalid email or password". I returned the link to my github repository to Itslearning. 
 
-1.12.2024 2 hours I helped my school mate with Phase 2 task. I also tried to understand why I was getting error "Invalid email or password" and why the logs didn't save to the table.  
+1.12.2024   2 hours I helped my school mate with Phase 2 task. I also tried to understand why I was getting error "Invalid email or password" and why the logs didn't save to the table.  
 
-2.12.2024 2 hours I continued to work on the code. I notice that const = [, storedUsername, storedPasswordHash, userUUID] = user; needs a comma in the first spot. After making that small change, everything worked well. I took the ZAP test afterward and I named that test "Added-A-Logging-2-12-2024.md". After that, I took the second test with .HAR and named that test "Second-test-after-adding-a-logging-2-12-2024.md". I noticed that there are difference between tests: The second test has line User Agent Fuzzer | Informational | 24 |. 
+2.12.2024   2 hours I continued to work on the code. I notice that const = [, storedUsername, storedPasswordHash, userUUID] = user; needs a comma in the first spot. After making that small change, everything worked well. I took the ZAP test afterward and I named that test "Added-A-Logging-2-12-2024.md". After that, I took the second test with .HAR and named that test "Second-test-after-adding-a-logging-2-12-2024.md". I noticed that there are difference between tests: The second test has line User Agent Fuzzer | Informational | 24 |. 
 
-3.12.2024 1 hour I helped the same schoolmate with Phase 2 in a Teams meeting to get his system up and running. 
+3.12.2024   1 hour I helped the same schoolmate with Phase 2 in a Teams meeting to get his system up and running. 
 
-I have worked 55 hours.
+8.12.2024   2 hours I did task Phase 3 and returned it Itslearning. I added cookies and indexPage with new options (log out, add a new resource and add a new reservation). I also added new files from the teacher's git hub. Everything worked well when I tested add a new resource and a reservation as a admin or reserver. I tested it under 15 year old and over 15 year old user. I took 2 Zap report. Second with .Har-file and it got 2 alerts more than other report. It got alert about loosely scoped cookie and user agent fuzzer.
+
+I have worked 57 hours.
