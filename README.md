@@ -37,4 +37,6 @@ This logbook is part of Centria's Cyber ​​Security and Data Protection (IT00
 
 8.12.2024   2 hours I did task Phase 3 and returned it Itslearning. I added cookies and indexPage with new options (log out, add a new resource and add a new reservation). I also added new files from the teacher's git hub. Everything worked well when I tested add a new resource and a reservation as a admin or reserver. I tested it under 15 year old and over 15 year old user. I took 2 Zap report. Second with .Har-file and it got 2 alerts more than other report. It got alert about loosely scoped cookie and user agent fuzzer.
 
-I have worked 57 hours.
+12.12.2024  2 hours I forgot to answer the previous task "The 5 most important points -> Tell in each point", so I did that. I named file SecurityCheck.md. The task wasn't easy and I had to use AI and Google searches with it. I learned more about vulnerabilities and security with booking systems like this. During the whole process, I had looked at the website and the code, that something was rotten here, but now the answer came that there were problems.
+
+I have worked 59 hours.
